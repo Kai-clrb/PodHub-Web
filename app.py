@@ -6,7 +6,7 @@ from waitress import serve
 app = Flask(__name__)
 
 
-REPLIT_URL = "https://f3000fa3-e3db-4044-81af-e677b1311973-00-24ik16vgp1blm.sisko.replit.dev/"
+REPLIT_URL = "https://fc1ce3f2-8a0c-4bdb-95e1-7230e99b1237-00-2ql3xtjuncpub.pike.replit.dev/"
 
 podcasts_by_category = {
     "Sports": [
