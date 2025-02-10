@@ -12,31 +12,47 @@
         <div class="logo">PodHub</div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/podcasts">Podcasts</a></li>
+            <li class="dropdown">
+                <a href="/podcasts">Podcasts ▾</a>
+                <ul class="dropdown-menu">
+                    {% for category in categories %}
+                        <li><a href="#{{ category|replace(' ', '_') }}">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
+
     <header>
         <h1>Explore Podcasts</h1>
         <p>Browse and listen to your favorite content.</p>
     </header>
+
     <main>
-        <div class="podcast-container">
-            {% for podcast in podcasts %}
-            <div class="podcast-card">
-                <h3>{{ podcast.title }}</h3>
-                <p>{{ podcast.description }}</p>
-                <audio controls>
-                    <source src="{{ podcast.file }}" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+        {% for category, podcasts in podcasts_by_category.items() %}
+        <section id="{{ category|replace(' ', '_') }}" class="podcast-category">
+            <h2>{{ category }}</h2>
+            <div class="podcast-container">
+                {% for podcast in podcasts %}
+                <div class="podcast-card">
+                    <h3>{{ podcast.title }}</h3>
+                    <p>{{ podcast.description }}</p>
+                    <audio controls>
+                        <source src="{{ podcast.file }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+        </section>
+        {% endfor %}
     </main>
+
     <footer>
         <p>&copy; 2025 PodHub. All rights reserved.</p>
     </footer>
+
     <!-- Chatbot icon remains visible but non-functional -->
     <div id="chatbot-icon">💬</div>
 </body>
