@@ -1,6 +1,12 @@
 from flask import Flask, render_template
+from apscheduler.schedulers.background import BackgroundScheduler
+import requests
+from waitress import serve
 
 app = Flask(__name__)
+
+# Your Replit public URL (Replace with your actual Replit URL)
+REPLIT_URL = "https://f3000fa3-e3db-4044-81af-e677b1311973-00-24ik16vgp1blm.sisko.replit.dev/"
 
 # Organizing podcasts into categories dynamically
 podcasts_by_category = {
@@ -29,6 +35,18 @@ def podcasts():
 def about():
     return render_template("about.html")
 
+# Function to keep Replit awake
+def keep_awake():
+    try:
+        requests.get(REPLIT_URL)
+        print("✅ Pinging to keep Replit awake...")
+    except requests.exceptions.RequestException as e:
+        print(f"⚠️ Error pinging the app: {e}")
+
+# Schedule the pinging function every 5 minutes
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=keep_awake, trigger="interval", minutes=5)
+scheduler.start()
+
 if __name__ == "__main__":
-    from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
