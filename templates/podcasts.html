@@ -57,3 +57,52 @@
     <div id="chatbot-icon">💬</div>
 </body>
 </html>
+<script>
+    const backendUrl = "https://d98984c3-2bbf-4982-8cd7-21ebaa4f65bd-00-1poj2vrh4ud6.pike.replit.dev/";  // Will be updated dynamically in Replit
+
+    async function fetchPodcasts() {
+        try {
+            const response = await fetch("/podcasts");
+            const data = await response.json();
+            
+            const categoryList = document.getElementById("category-list");
+            const podcastContainer = document.getElementById("podcast-container");
+
+            // Clear existing content
+            categoryList.innerHTML = "";
+            podcastContainer.innerHTML = "";
+
+            Object.keys(data).forEach(category => {
+                // Add category to navigation
+                const categoryItem = document.createElement("li");
+                categoryItem.innerHTML = `<a href="#${category}">${category}</a>`;
+                categoryList.appendChild(categoryItem);
+
+                // Add category section
+                const categorySection = document.createElement("div");
+                categorySection.id = category;
+                categorySection.innerHTML = `<h2>${category}</h2>`;
+                
+                data[category].forEach(podcast => {
+                    const podcastCard = document.createElement("div");
+                    podcastCard.classList.add("podcast-card");
+                    podcastCard.innerHTML = `
+                        <h3>${podcast.title}</h3>
+                        <p>${podcast.description}</p>
+                        <audio controls>
+                            <source src="${podcast.file}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    `;
+                    categorySection.appendChild(podcastCard);
+                });
+
+                podcastContainer.appendChild(categorySection);
+            });
+        } catch (error) {
+            console.error("Error fetching podcasts:", error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchPodcasts);
+</script>
