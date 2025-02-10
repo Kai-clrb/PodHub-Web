@@ -5,10 +5,9 @@ from waitress import serve
 
 app = Flask(__name__)
 
-# Your Replit public URL (Replace with your actual Replit URL)
+
 REPLIT_URL = "https://f3000fa3-e3db-4044-81af-e677b1311973-00-24ik16vgp1blm.sisko.replit.dev/"
 
-# Organizing podcasts into categories dynamically
 podcasts_by_category = {
     "Sports": [
         {"title": "Anshul Jubli & Ranveer Allahbadia", "description": "Description", "file": "static/Podcasts/Anshul Jubli & Ranveer Allahbadia.mp3"},
