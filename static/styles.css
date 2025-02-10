@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff9f4; /* Light peach-orange background */
+    color: #333; /* Dark text for contrast */
+}
+
+h1, h2, h3 {
+    color: #ff7f50; /* Coral peach-orange color for headings */
+}
+
+p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ff7f50; /* Coral peach-orange */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #ffe5d1; /* Light peach-orange on hover */
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fff4e6; /* Light peach background */
+    border-bottom: 2px solid #ffe5d1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+}
+
+.podcast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.podcast-card {
+    background-color: #fff;
+    border: 1px solid #ffe5d1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.podcast-card:hover {
+    transform: translateY(-5px);
+}
+
+.podcast-card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.podcast-card p {
+    margin-bottom: 1rem;
+}
+
+audio {
+    width: 100%;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #ff7f50;
+    color: #fff;
+    margin-top: 14rem;
+}
+
+/* Chatbot Icon */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff7f50;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#chatbot-icon:hover {
+    transform: scale(1.1);
+    background-color: #ff5722;
+}
+
+/* About Page Specific */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ffe5d1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+    .podcast-container {
+        grid-template-columns: 1fr;
+    }
+}
