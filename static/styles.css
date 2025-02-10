@@ -54,7 +54,7 @@ nav .nav-links li a:hover {
 header {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: #fff4e6; /* Light peach background */
+    background-color: #000000; /* Light peach background */
     border-bottom: 2px solid #ffe5d1;
 }
 
@@ -121,7 +121,7 @@ footer {
     margin: 0 auto;
     text-align: justify;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #000000;
     border: 1px solid #ffe5d1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
