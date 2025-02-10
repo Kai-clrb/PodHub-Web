@@ -114,29 +114,6 @@ footer {
     margin-top: 14rem;
 }
 
-/* Chatbot Icon */
-#chatbot-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #ff7f50;
-    color: #fff;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#chatbot-icon:hover {
-    transform: scale(1.1);
-    background-color: #ff5722;
-}
 
 /* About Page Specific */
 .about {
