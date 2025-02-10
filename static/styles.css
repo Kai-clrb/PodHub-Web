@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #000000; 
-    color: #f6f6f6; 
+    background-color: #fff9f4; /* Light peach-orange background */
+    color: #333; /* Dark text for contrast */
 }
 
 h1, h2, h3 {
@@ -54,7 +54,7 @@ nav .nav-links li a:hover {
 header {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: #000000; /* Light peach background */
+    background-color: #fff4e6; /* Light peach background */
     border-bottom: 2px solid #ffe5d1;
 }
 
@@ -121,7 +121,7 @@ footer {
     margin: 0 auto;
     text-align: justify;
     padding: 2rem;
-    background-color: #000000;
+    background-color: #fff;
     border: 1px solid #ffe5d1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -142,53 +142,4 @@ footer {
     .podcast-container {
         grid-template-columns: 1fr;
     }
-}
-
-nav {
-    background-color: #FFB07F;
-    padding: 15px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 10px 15px;
-}
-
-/* Dropdown Styling */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #FF9057;
-    list-style: none;
-    padding: 0;
-    border-radius: 5px;
-    z-index: 1000;
-}
-
-.dropdown-menu li {
-    padding: 10px;
-}
-
-.dropdown-menu li a {
-    color: white;
-    display: block;
-    padding: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
 }
