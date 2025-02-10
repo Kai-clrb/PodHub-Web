@@ -193,7 +193,7 @@ nav {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #d86b0c;
     min-width: 180px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
