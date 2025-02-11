@@ -33,7 +33,6 @@ def podcasts():
 def about():
     return render_template("about.html")
 
-# Function to keep Replit awake
 def keep_awake():
     try:
         requests.get(REPLIT_URL)
@@ -41,7 +40,6 @@ def keep_awake():
     except requests.exceptions.RequestException as e:
         print(f"⚠️ Error pinging the app: {e}")
 
-# Schedule the pinging function every 5 minutes
 scheduler = BackgroundScheduler()
 scheduler.add_job(func=keep_awake, trigger="interval", minutes=5)
 scheduler.start()
